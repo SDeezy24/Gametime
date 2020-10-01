@@ -1,0 +1,61 @@
+pragma solidity ^0.5.0;
+
+contract firstProject {
+    
+    uint money;
+    address payable public investor;
+    
+    
+    struct Info {
+        uint name;
+        uint age;
+    }
+
+    address public boardmember;
+    
+    mapping(address => investors) public investors;
+    
+    Proposal[] public proposals;
+    
+    function startUp() public payable {
+        require(now >= auctionEndTime, "Auction not yet ended.");
+    }
+    
+    constructor(uint _biddingTime, uint _revealTime, address payable _beneficiary) {
+        beneficiary = _beneficiary;
+        biddingEnd = now + _biddingTime;
+        revealEnd = biddingEnd + _revealTime;
+    }
+    
+    mapping(address => uint) pendingReturns;
+    
+    event AuctionEnded(address winner, uint highestBid);
+    
+    enum State { Created, Locked, Released, Inactive }
+    
+    modifier inState(){
+        require(
+            state == state,
+            
+            );
+            _;
+            
+
+    function abort() public payable {
+        require(_condition);
+        _;
+    }
+    
+    function kill() public onlyOwner {
+        selfdestruct(owner());
+    }
+    
+    
+    if (delegate_.voted) {
+        // If the delegate already voted,
+        // directly add to the number of votes.
+       proposals[delegate_.vote].voteCount += sender.weight; 
+    } else {
+        // If the delegate did not vote yet,
+        // add her to weight.
+        delegate_.weight += sender.weight;
